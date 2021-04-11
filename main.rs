@@ -1,3 +1,5 @@
+use std::env;
+
 struct Force {
     i: f64,
     j: f64,
@@ -41,6 +43,7 @@ fn split(force: f64, mut theta: f64) -> Force {
 }
 
 fn main() {
-    let f = split(50.0, 320.0);
+    let args: Vec<String> = env::args.collect()
+    let f = split(args[1] as float, args[2] as float);
     println!("i: {}, j: {}", f.i, f.j);
 }
